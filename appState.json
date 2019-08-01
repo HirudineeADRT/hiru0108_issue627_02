@@ -1,0 +1,99 @@
+{
+  "EDITOR_STATE": {
+    "allProjectFiles": {
+      "dc1cb354-81d1-4f1f-b030-ec87c8dbfc57": {
+        "id": "dc1cb354-81d1-4f1f-b030-ec87c8dbfc57",
+        "parent": null,
+        "name": "hiru0108_issue627_02",
+        "type": "DIRECTORY",
+        "isDirectory": true,
+        "children": [
+          "dbe06487-4c37-4d01-acbd-3df05ab96816"
+        ],
+        "isRemovable": false,
+        "filePath": "hiru0108_issue627_02"
+      },
+      "dbe06487-4c37-4d01-acbd-3df05ab96816": {
+        "id": "dbe06487-4c37-4d01-acbd-3df05ab96816",
+        "parent": "dc1cb354-81d1-4f1f-b030-ec87c8dbfc57",
+        "name": "lambda.js",
+        "type": "JS_LAMBDA",
+        "isDirectory": false,
+        "children": [],
+        "isRemovable": true,
+        "filePath": "hiru0108_issue627_02/lambda.js",
+        "code": "let AWS = require('aws-sdk');\nconst sns = new AWS.SNS();\n\nexports.handler = function (event, context, callback) {\n    sns.getTopicAttributes({\n        TopicArn: 'arn:aws:sns:us-east-1:318300609668:TestSNS'\n    }).promise()\n        .then(data => {\n            // your code goes here\n        })\n        .catch(err => {\n            // error handling goes here\n        });\n\n    callback(null, { \"message\": \"Successfully executed\" });\n}",
+        "config": {
+          "runtime": "nodejs8.10",
+          "handler": "handler",
+          "timeout": 60,
+          "memory": 128,
+          "layers": []
+        },
+        "triggers": []
+      }
+    },
+    "deletedFiles": [],
+    "rootNode": "dc1cb354-81d1-4f1f-b030-ec87c8dbfc57",
+    "openFiles": [
+      "dbe06487-4c37-4d01-acbd-3df05ab96816"
+    ],
+    "currentFileId": "dbe06487-4c37-4d01-acbd-3df05ab96816",
+    "resources": {
+      "snsusEast1TestSNS": {
+        "name": "snsusEast1TestSNS",
+        "type": "SNS",
+        "config": {
+          "topicMode": 1,
+          "topicName": "TestSNS",
+          "topicArn": "arn:aws:sns:us-east-1:318300609668:TestSNS",
+          "topicRegion": "us-east-1",
+          "snsType": 0,
+          "subscriptions": []
+        }
+      }
+    },
+    "customTemplate": {
+      "dialect": null,
+      "definitions": {}
+    },
+    "envVariables": [
+      {
+        "lambdaId": "all",
+        "varKey": "SIGMA_AWS_ACC_ID",
+        "varValue": null,
+        "shouldPersist": false,
+        "displayOnly": false,
+        "editable": false
+      }
+    ],
+    "packageJSON": {
+      "dependencies": {
+        "aws-sdk": {
+          "name": "aws-sdk",
+          "language": "javascript",
+          "version": "2.176.0",
+          "dev": true,
+          "notRemovable": false
+        }
+      }
+    }
+  },
+  "PROJECT_META": {
+    "projectName": "hiru0108_issue627_02",
+    "projectDescription": "",
+    "projectVersion": "1.0.0",
+    "projectRegion": "us-east-1",
+    "platform": "AWS",
+    "platformRegions": {},
+    "lastSave": 1564653501166
+  },
+  "VCS_STATE": {
+    "provider": "GitHub",
+    "repo": {
+      "name": "hiru0108_issue627_02",
+      "url": "https://github.com/HirudineeADRT/hiru0108_issue627_02",
+      "branches": []
+    }
+  }
+}
